@@ -1,4 +1,3 @@
-/*i was here */
 package Classes;
 
 import java.util.Date;
