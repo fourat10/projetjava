@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package best_cars;
+import adminCRUD.admin;
 
 import ig.Connecteur;
 import java.sql.Connection;
@@ -138,7 +139,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                     rs.first();
                     if(rs.getString("mot_de_pass").equals(password_user)){
                         this.dispose();//tsakker 
-                        AdminInterface ad =new AdminInterface(cin_user);//thel wahda jdida
+                        admin ad =new admin();//thel wahda jdida
                         ad.setLocationRelativeTo(null);
                         ad.setVisible(true);
                     }else{
