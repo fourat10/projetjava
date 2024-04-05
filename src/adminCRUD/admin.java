@@ -29,6 +29,7 @@ public class admin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         client = new javax.swing.JButton();
         mec = new javax.swing.JButton();
+        aff = new javax.swing.JButton();
         jDesktopPane2 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,15 +54,26 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
+        aff.setBackground(new java.awt.Color(0, 0, 0));
+        aff.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        aff.setForeground(new java.awt.Color(255, 255, 51));
+        aff.setText("afficher voiture");
+        aff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                affActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mec, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(client, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addComponent(mec, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(aff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,14 +82,16 @@ public class admin extends javax.swing.JFrame {
                 .addComponent(client, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(148, 148, 148)
                 .addComponent(mec, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(349, Short.MAX_VALUE))
+                .addGap(99, 99, 99)
+                .addComponent(aff, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(203, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
         jDesktopPane2.setLayout(jDesktopPane2Layout);
         jDesktopPane2Layout.setHorizontalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 728, Short.MAX_VALUE)
         );
         jDesktopPane2Layout.setVerticalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,8 +128,20 @@ public class admin extends javax.swing.JFrame {
     }//GEN-LAST:event_clientActionPerformed
 
     private void mecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mecActionPerformed
-        // TODO add your handling code here:
+        gestionmecanincien adm=new gestionmecanincien(jDesktopPane2);
+        jDesktopPane2.removeAll();
+        jDesktopPane2.updateUI();//bech tsaker w thel haja jdida
+        jDesktopPane2.add(adm);
+        adm.show();
     }//GEN-LAST:event_mecActionPerformed
+
+    private void affActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_affActionPerformed
+        affichervoiture aff=new affichervoiture(jDesktopPane2);
+        jDesktopPane2.removeAll();
+        jDesktopPane2.updateUI();//bech tsaker w thel haja jdida
+        jDesktopPane2.add(aff);
+        aff.show();
+    }//GEN-LAST:event_affActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,6 +179,7 @@ public class admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aff;
     private javax.swing.JButton client;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JPanel jPanel1;

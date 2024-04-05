@@ -31,6 +31,7 @@ public class updateclient extends javax.swing.JInternalFrame {
         
         this.jDesktopPane3=jDesktopPanel;
         initComponents();
+        load();
     }
 
     /**
@@ -42,6 +43,7 @@ public class updateclient extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         recherche = new javax.swing.JButton();
         edit = new javax.swing.JButton();
         name_field = new javax.swing.JTextField();
@@ -51,6 +53,18 @@ public class updateclient extends javax.swing.JInternalFrame {
         cin_field = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
+        tel = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        addresse = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        email = new javax.swing.JTextField();
+
+        jLabel3.setText("jLabel3");
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         recherche.setText("Recherche");
         recherche.addActionListener(new java.awt.event.ActionListener() {
@@ -91,11 +105,11 @@ public class updateclient extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "CIN", "PRENOM", "EMAIL", "USERNAME", "PASSWORD"
+                "CIN", "PRENOM", "TEL", "ADDRESSE", "EMAIL"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -109,34 +123,71 @@ public class updateclient extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(table);
 
+        jLabel4.setText("tel:");
+
+        addresse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addresseActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("addresse:");
+
+        jLabel6.setText("email:");
+
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(25, 25, 25))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(name_field, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(recherche))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(59, 59, 59)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cin_field, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(refresh1)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(name_field, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                            .addComponent(cin_field, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(recherche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(208, 225, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(refresh1)
-                .addGap(39, 39, 39))
+                        .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(addresse, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel6)
+                .addGap(38, 38, 38)
+                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,26 +196,67 @@ public class updateclient extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(cin_field, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(name_field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(recherche, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(3, 3, 3)
-                .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name_field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recherche, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
+                        .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private Connection con ;
+    public void load(){
+        Connecteur connect=new Connecteur();
+       
+        con = connect.connecttodb();
+        String query = "SELECT * FROM client";
+        DefaultTableModel tablemodel =(DefaultTableModel) table.getModel();
+        tablemodel.setRowCount(0);
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+            
+            while(res.next()){
+                String cin = res.getString("CIN");
+                String prenom = res.getString("prenom");
+                String address = res.getString("addresse");
+                String tel = res.getString("tel");
+                String email =res.getString("email");
+                tablemodel.addRow(new Object[]{cin,prenom,tel,address,email});
+                
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(listban.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public boolean isValidEmailAddress(String email) {
+           String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+           java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+           java.util.regex.Matcher m = p.matcher(email);
+           return m.matches();
+    }
     
     private void rechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercheActionPerformed
         Connecteur connect=new Connecteur();
@@ -180,10 +272,10 @@ public class updateclient extends javax.swing.JInternalFrame {
             while(res.next()){
                 String cin = res.getString("cin");
                 prenom = res.getString("prenom");
-                String email = res.getString("email");
-                String username = res.getString("username");
-                String password =res.getString("mot_de_pass");
-                tablemodel.addRow(new Object[]{cin,prenom,email,username,password});
+                String tel = res.getString("tel");
+                String address = res.getString("addresse");
+                String email =res.getString("email");
+                tablemodel.addRow(new Object[]{cin,prenom,tel,address,email});
 
             }
 
@@ -193,18 +285,78 @@ public class updateclient extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_rechercheActionPerformed
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        String matricule =cin_field.getText();
-        String query=" UPDATE voiture SET etat='disponible' WHERE matricule='"+matricule+"'";
-        Statement stmt;
-        try {
-            stmt = con.createStatement();
-            stmt.execute(query);
-            JOptionPane.showMessageDialog(null,"CAR ( MATRICULE = "+matricule+") REPAIRED  !!!");
-            cin_field.setText("");
+        String cin_user =cin_field.getText();
+        String telp =tel.getText();
+        String address =addresse.getText();
+        String mail =email.getText();
+        if(telp.equals("") && address.equals("") && mail.equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "all the fields are empty!", "Error", JOptionPane.ERROR_MESSAGE);
 
-        } catch (SQLException ex) {
-            Logger.getLogger(updateclient.class.getName()).log(Level.SEVERE, null, ex);
         }
+        else
+        {
+            if(!(telp.equals("")))
+            {
+                String query=" UPDATE client SET tel='"+telp+" 'WHERE CIN='"+cin_user+"'";
+                Statement stmt;
+        
+                try 
+                {
+                    stmt = con.createStatement();
+                    stmt.execute(query);
+                } 
+                catch (SQLException ex)
+                {
+                Logger.getLogger(updateclient.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(!(address.equals("")))
+            {
+                    String query1=" UPDATE client SET addresse='"+address+"'WHERE CIN='"+cin_user+"'";
+                    Statement stmt1;        
+                    try 
+                    {
+                        stmt1 = con.createStatement();
+                        stmt1.execute(query1);              
+                    } 
+                    catch (SQLException ex) 
+                    {
+                        Logger.getLogger(updateclient.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+            }
+            if(!(mail.equals("")))
+            {
+                if(!(isValidEmailAddress(mail)))
+                {
+                    JOptionPane.showMessageDialog(null, "INVALID MAIL ADDRESS!!!!!!", "Error", JOptionPane.ERROR_MESSAGE);
+                    if(!(address.equals(""))|!telp.equals(""))
+                        JOptionPane.showMessageDialog(null,"UPDATED CLIENT");
+                    
+                }
+                else
+                {
+                    String query2=" UPDATE client SET email='"+mail+"' WHERE CIN='"+cin_user+"'";
+                    Statement stmt2;
+
+                    try 
+                    {
+                        stmt2 = con.createStatement();
+                        stmt2.execute(query2);
+                    } 
+                    catch (SQLException ex) 
+                    {
+                        Logger.getLogger(updateclient.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    JOptionPane.showMessageDialog(null,"UPDATED CLIENT");
+                    
+                }
+            
+            } 
+            cin_field.setText("");
+            
+        }
+        load();
     }//GEN-LAST:event_editActionPerformed
 
     private void name_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_fieldActionPerformed
@@ -212,7 +364,7 @@ public class updateclient extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_name_fieldActionPerformed
 
     private void refresh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresh1ActionPerformed
-
+        load();
     }//GEN-LAST:event_refresh1ActionPerformed
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
@@ -222,16 +374,31 @@ public class updateclient extends javax.swing.JInternalFrame {
         cin_field.setText(cin);
     }//GEN-LAST:event_tableMouseClicked
 
+    private void addresseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addresseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addresseActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addresse;
     private javax.swing.JLabel cin_field;
     private javax.swing.JButton edit;
+    private javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField name_field;
     private javax.swing.JButton recherche;
     private javax.swing.JButton refresh1;
     private javax.swing.JTable table;
+    private javax.swing.JTextField tel;
     // End of variables declaration//GEN-END:variables
 }

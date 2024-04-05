@@ -52,11 +52,7 @@ public class ListePanne extends javax.swing.JInternalFrame {
             
         } catch (SQLException ex) {
             Logger.getLogger(ListePanne.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-        
-        
+        }       
     }
     /**
      * This method is called from within the constructor to initialize the form.

@@ -169,7 +169,7 @@ public class listban extends javax.swing.JInternalFrame {
         Connecteur connect=new Connecteur();
        
         con = connect.connecttodb();
-        String query = "SELECT * FROM banned";
+        String query = "SELECT * FROM banned join client";
         DefaultTableModel tablemodel =(DefaultTableModel) table.getModel();
         tablemodel.setRowCount(0);
         try {
@@ -201,7 +201,7 @@ public class listban extends javax.swing.JInternalFrame {
        
         con = connect.connecttodb();
         String prenom = prenom_field.getText();
-        String query = "SELECT * FROM banned WHERE prenom = '"+prenom+"'";
+        String query = "SELECT * FROM banned join client WHERE prenom = '"+prenom+"'";
         DefaultTableModel tablemodel =(DefaultTableModel) table.getModel();
         tablemodel.setRowCount(0);
         try {
@@ -224,64 +224,18 @@ public class listban extends javax.swing.JInternalFrame {
 
     private void unbanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unbanActionPerformed
         Connecteur connect=new Connecteur();
-       
         con = connect.connecttodb();
         String cin =cin_field.getText();
-        String query = "SELECT * FROM banned WHERE cin = '"+cin+"'";
         String query1=" DELETE from banned where cin=?";
-        try {
-                
-                Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-
-                ResultSet res = stmt.executeQuery(query);
-                if(res.next()){
-                    res.first();
-                    String mdp=res.getString("mot_de_pass");
-                    cin = res.getString("CIN");
-                    String nom = res.getString("nom");
-                    String prenom = res.getString("prenom");
-                    String tel = res.getString("tel");
-                    String addres=res.getString("addresse");
-                    String username=res.getString("username");
-                    String email=res.getString("email");
-                    Date date=res.getDate("date_de_naissance");
-                    java.sql.Date sqlDate1 = new java.sql.Date(date.getTime());
-                    String query2 = "INSERT INTO client VALUES (?,?,?,?,?,?,?,?,?)";
-
-                                    try (PreparedStatement stmt1 = con.prepareStatement(query2)) {
-                                        stmt1.setString(1, cin);
-                                        stmt1.setString(2, nom);
-                                        stmt1.setString(3, prenom);
-                                        stmt1.setString(4, username);
-                                        stmt1.setDate(5, sqlDate1); // Assuming sqlDate1 is your java.sql.Date object
-                                        stmt1.setString(6, email);
-                                        stmt1.setString(7, tel);
-                                        stmt1.setString(8, addres);
-                                        stmt1.setString(9, mdp);
-                                        
-
-                                        stmt1.executeUpdate();
-                                        System.out.println("Data inserted successfully into client table.");                
-
-                                    } catch (SQLException e) {
-                                        System.out.println("Error inserting data into client table: " + e.getMessage());
-                                    }
-                                    
-                    
-                }
-               try (
-            // Establishing connection
-            // Creating PreparedStatement
-            PreparedStatement preparedStatement = con.prepareStatement(query1)
-        ) {
-            preparedStatement.setString(1, cin);
-            preparedStatement.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-            } catch (SQLException ex) {
-                Logger.getLogger(listban.class.getName()).log(Level.SEVERE, null, ex);
-            }
+               try (PreparedStatement preparedStatement = con.prepareStatement(query1))
+               {
+                    preparedStatement.setString(1, cin);
+                    preparedStatement.executeUpdate();
+               } 
+               catch (SQLException ex) 
+               {
+                    ex.printStackTrace();
+               }
         load();
     }//GEN-LAST:event_unbanActionPerformed
 
