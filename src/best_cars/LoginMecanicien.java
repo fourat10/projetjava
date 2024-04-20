@@ -139,7 +139,7 @@ public class LoginMecanicien extends javax.swing.JFrame {
                     rs.first();
                     if(rs.getString("mot_de_pass").equals(password_user)){
                         this.dispose();//tsakker 
-                        AdminInterface ad =new AdminInterface(cin_user);//thel wahda jdida
+                        MecanicienInterface ad =new MecanicienInterface();//thel wahda jdida
                         ad.setLocationRelativeTo(null);
                         ad.setVisible(true);
                     }else{

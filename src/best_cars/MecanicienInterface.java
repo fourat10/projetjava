@@ -13,7 +13,9 @@ public class MecanicienInterface extends javax.swing.JFrame {
     /**
      * Creates new form MecanicienInterface
      */
+   
     public MecanicienInterface() {
+       
         initComponents();
     }
 

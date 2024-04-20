@@ -157,7 +157,7 @@ public class LoginClient extends javax.swing.JFrame {
                     query = "SELECT * FROM banned WHERE CIN='"+cin_user+"'";
                     rs = stmt.executeQuery(query);
                     if(rs.next()){
-                        JOptionPane.showMessageDialog(null,"YOU ARE BANNED  !!!");
+                            JOptionPane.showMessageDialog(null,"YOU ARE BANNED  !!!");
                     }else{
                         JOptionPane.showMessageDialog(null," NO ACCOUNT WITH THIS CIN !!!");
                     }
