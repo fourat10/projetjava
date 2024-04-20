@@ -30,6 +30,7 @@ public class admin extends javax.swing.JFrame {
         client = new javax.swing.JButton();
         mec = new javax.swing.JButton();
         aff = new javax.swing.JButton();
+        client1 = new javax.swing.JButton();
         jDesktopPane2 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,23 +65,37 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
+        client1.setBackground(new java.awt.Color(0, 0, 0));
+        client1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        client1.setForeground(new java.awt.Color(255, 255, 51));
+        client1.setText("gestion des voiture");
+        client1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                client1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mec, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+            .addComponent(aff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(client, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(client, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(client1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(aff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(59, 59, 59)
                 .addComponent(client, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
+                .addGap(41, 41, 41)
+                .addComponent(client1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(mec, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(99, 99, 99)
                 .addComponent(aff, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,6 +158,14 @@ public class admin extends javax.swing.JFrame {
         aff.show();
     }//GEN-LAST:event_affActionPerformed
 
+    private void client1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client1ActionPerformed
+        gestionvoiture adv = new gestionvoiture(jDesktopPane2);
+        jDesktopPane2.removeAll();
+        jDesktopPane2.updateUI();//bech tsaker w thel haja jdida
+        jDesktopPane2.add(adv);
+        adv.show();
+    }//GEN-LAST:event_client1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -181,6 +204,7 @@ public class admin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aff;
     private javax.swing.JButton client;
+    private javax.swing.JButton client1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mec;

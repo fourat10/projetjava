@@ -17,16 +17,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author adem
  */
-public class deleteclient extends javax.swing.JInternalFrame {
+public class deletevoiture extends javax.swing.JInternalFrame {
     private javax.swing.JDesktopPane jDesktopPane3;
 
     /**
      * Creates new form deleteclient
      */
-    public deleteclient() {
+    public deletevoiture() {
         initComponents();
     }
-    public deleteclient(javax.swing.JDesktopPane jDesktopPanel) {
+    public deletevoiture(javax.swing.JDesktopPane jDesktopPanel) {
       
         this.jDesktopPane3=jDesktopPanel;
         initComponents();
@@ -37,7 +37,7 @@ public class deleteclient extends javax.swing.JInternalFrame {
         Connecteur connect=new Connecteur();
        
         con = connect.connecttodb();
-        String query = "SELECT * FROM client";
+        String query = "SELECT * FROM voiture";
         DefaultTableModel tablemodel =(DefaultTableModel) table.getModel();
         tablemodel.setRowCount(0);
         try {
@@ -45,12 +45,10 @@ public class deleteclient extends javax.swing.JInternalFrame {
             ResultSet res = stmt.executeQuery(query);
             
             while(res.next()){
-                String cin = res.getString("CIN");
-                String prenom = res.getString("prenom");
-                String address = res.getString("addresse");
-                String tel = res.getString("tel");
-                String email =res.getString("email");
-                tablemodel.addRow(new Object[]{cin,prenom,tel,address,email});
+                String matricule = res.getString("matricule");
+                String marque = res.getString("marque");
+                String model = res.getString("model");
+                tablemodel.addRow(new Object[]{matricule,marque,model});
                 
             }
             
@@ -74,7 +72,7 @@ public class deleteclient extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         refresh1 = new javax.swing.JButton();
-        cin_field = new javax.swing.JLabel();
+        marticule_field = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
 
@@ -102,9 +100,9 @@ public class deleteclient extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("CIN:");
+        jLabel1.setText("matricule");
 
-        jLabel2.setText("PRENOM:");
+        jLabel2.setText("marque");
 
         refresh1.setText("Refresh");
         refresh1.addActionListener(new java.awt.event.ActionListener() {
@@ -113,19 +111,19 @@ public class deleteclient extends javax.swing.JInternalFrame {
             }
         });
 
-        cin_field.setBackground(new java.awt.Color(197, 33, 33));
-        cin_field.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 255, 255), 2, true));
+        marticule_field.setBackground(new java.awt.Color(197, 33, 33));
+        marticule_field.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 255, 255), 2, true));
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "CIN", "PRENOM", "TEL", "ADDRESSE", "EMAIL"
+                "matricule", "marque", "model"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -151,7 +149,7 @@ public class deleteclient extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cin_field, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(marticule_field, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -172,7 +170,7 @@ public class deleteclient extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cin_field, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(marticule_field, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(refresh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -193,8 +191,8 @@ public class deleteclient extends javax.swing.JInternalFrame {
     private void rechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercheActionPerformed
         Connecteur connect=new Connecteur();
         con = connect.connecttodb();
-        String prenom = name_field.getText();
-        String query = "SELECT * FROM client WHERE prenom = '"+prenom+"'";
+        String marque = name_field.getText();
+        String query = "SELECT * FROM voiture WHERE marque = '"+marque+"'";
         DefaultTableModel tablemodel =(DefaultTableModel) table.getModel();
         tablemodel.setRowCount(0);
         try {
@@ -202,12 +200,11 @@ public class deleteclient extends javax.swing.JInternalFrame {
             ResultSet res = stmt.executeQuery(query);
 
             while(res.next()){
-                String cin = res.getString("cin");
-                prenom = res.getString("prenom");
-                String tel = res.getString("tel");
-                String address = res.getString("addresse");
-                String email =res.getString("email");
-                tablemodel.addRow(new Object[]{cin,prenom,tel,address,email});
+                String matricule = res.getString("matricule");
+                marque = res.getString("marque");
+                String model = res.getString("model");
+           
+                tablemodel.addRow(new Object[]{matricule,marque,model});
 
             }
 
@@ -217,8 +214,8 @@ public class deleteclient extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_rechercheActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        String cin_user =cin_field.getText();
-        String query=" DELETE FROM client where CIN='"+cin_user+"'";
+        String matricule =marticule_field.getText();
+        String query=" DELETE FROM voiture where matricule='"+matricule+"'";
         Statement stmt;
 
         try
@@ -231,7 +228,7 @@ public class deleteclient extends javax.swing.JInternalFrame {
             Logger.getLogger(updateclient.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        cin_field.setText("");
+        marticule_field.setText("");
         load();
     }//GEN-LAST:event_deleteActionPerformed
 
@@ -246,17 +243,17 @@ public class deleteclient extends javax.swing.JInternalFrame {
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         int row = table.getSelectedRow();
-        String cin =(String) model.getValueAt(row, 0);
-        cin_field.setText(cin);
+        String matricule =(String) model.getValueAt(row, 0);
+        marticule_field.setText(matricule);
     }//GEN-LAST:event_tableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cin_field;
     private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel marticule_field;
     private javax.swing.JTextField name_field;
     private javax.swing.JButton recherche;
     private javax.swing.JButton refresh1;
