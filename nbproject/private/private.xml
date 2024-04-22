@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/Best_cars.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/ig/Connecteur.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/LoginAdmin.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/ClientCRUD/ClientInterface.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/ClientCRUD/LouerVoiture.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/Login.java</file>
             <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/LoginClient.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/AdminInterface.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/ClientInterface.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/ClientCRUD/PayerLocation.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/ClientCRUD/PrendreVoiture.java</file>
             <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/MainPage.java</file>
             <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Best_cars/src/best_cars/Signup.java</file>
         </group>

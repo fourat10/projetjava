@@ -37,7 +37,7 @@ public class LoginAdmin extends javax.swing.JFrame {
 
         password = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
-        cin = new javax.swing.JTextField();
+        username_admin = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
@@ -57,7 +57,7 @@ public class LoginAdmin extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("CIN");
+        jLabel1.setText("USERNAME :");
 
         jLabel2.setText("PASSWORD");
 
@@ -85,7 +85,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                                 .addGap(93, 93, 93)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                            .addComponent(cin))
+                            .addComponent(username_admin))
                         .addGap(237, 237, 237))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -101,7 +101,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                 .addComponent(back)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(username_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -120,17 +120,17 @@ public class LoginAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        String cin_user = cin.getText();
+        String username = username_admin.getText();
         char[] passwordChars = password.getPassword();
         String password_user = new String(passwordChars);
-        if(cin_user.equals("") | password_user.equals("")){
+        if(username.equals("") | password_user.equals("")){
             JOptionPane.showMessageDialog(null," VEILLEZ REMPLIRE TOUS LES CHAMPS    !!!");                    
         }else{
             Connecteur connect=new Connecteur();
             Connection con;
             con = connect.connecttodb();
             
-            String query = ("SELECT * FROM administrateur WHERE CIN='"+cin_user+"'");
+            String query = ("SELECT * FROM administrateur WHERE username='"+username+"'");
             try {
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
@@ -138,7 +138,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                     rs.first();
                     if(rs.getString("mot_de_pass").equals(password_user)){
                         this.dispose();//tsakker 
-                        AdminInterface ad =new AdminInterface(cin_user);//thel wahda jdida
+                        AdminInterface ad =new AdminInterface(username);//thel wahda jdida
                         ad.setLocationRelativeTo(null);
                         ad.setVisible(true);
                     }else{
@@ -201,10 +201,10 @@ this.dispose();//tsakker
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JTextField cin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton login;
     private javax.swing.JPasswordField password;
+    private javax.swing.JTextField username_admin;
     // End of variables declaration//GEN-END:variables
 }

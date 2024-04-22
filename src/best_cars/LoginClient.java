@@ -4,6 +4,8 @@
  */
 package best_cars;
 
+import Classes.Client;
+import ClientCRUD.ClientInterface;
 import ig.Connecteur;
 import java.sql.*;
 import java.util.logging.Level;
@@ -146,8 +148,14 @@ public class LoginClient extends javax.swing.JFrame {
                 if(rs.next()){
                     rs.first();
                     if(rs.getString("mot_de_pass").equals(password_user)){
+                        Client c = new Client(cin_user, rs.getString("nom"),
+                                rs.getString("prenom"), rs.getString("email"), 
+                                rs.getDate("date_de_naissance"),
+                                rs.getString("username"), rs.getString("tel"), 
+                                rs.getString("addresse"),
+                                rs.getString("mot_de_pass"));
                         this.dispose();//tsakker 
-                        ClientInterface cl =new ClientInterface(cin_user);//thel wahda jdida
+                        ClientInterface cl =new ClientInterface(c,con);//thel wahda jdida
                         cl.setLocationRelativeTo(null);
                         cl.setVisible(true);
                     }else{
@@ -176,7 +184,7 @@ public class LoginClient extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-this.dispose();//tsakker 
+        this.dispose();//tsakker 
         Login lg =new Login();//thel wahda jdida
         lg.setLocationRelativeTo(null);
         lg.setVisible(true);
