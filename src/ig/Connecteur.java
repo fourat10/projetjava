@@ -12,11 +12,11 @@ public class Connecteur {
     Connection con;
     public Connecteur (){  
 
-               try{
+        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url="jdbc:mysql://localhost:3306/best_cars";
             String user="root";
-            String pass="adem10290";
+            String pass="foufoufourat123";
             con=DriverManager.getConnection(url,user, pass);
             System.out.println("connexion disponible");
         }
@@ -26,6 +26,6 @@ public class Connecteur {
         }
     }       
         public Connection connecttodb(){
-                       return con; 
+            return con; 
         }  
 }

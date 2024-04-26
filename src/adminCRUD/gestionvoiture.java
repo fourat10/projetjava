@@ -44,14 +44,20 @@ public class gestionvoiture extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
 
+        add.setBackground(new java.awt.Color(255, 255, 102));
+        add.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         add.setText("add");
+        add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
             }
         });
 
+        del.setBackground(new java.awt.Color(255, 255, 102));
+        del.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         del.setText("delete");
+        del.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         del.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 delActionPerformed(evt);
@@ -62,21 +68,27 @@ public class gestionvoiture extends javax.swing.JInternalFrame {
         jDesktopPane3.setLayout(jDesktopPane3Layout);
         jDesktopPane3Layout.setHorizontalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 692, Short.MAX_VALUE)
         );
         jDesktopPane3Layout.setVerticalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        update.setBackground(new java.awt.Color(255, 255, 102));
+        update.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         update.setText("update");
+        update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateActionPerformed(evt);
             }
         });
 
+        best.setBackground(new java.awt.Color(255, 255, 102));
+        best.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         best.setText("best sellers");
+        best.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         best.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bestActionPerformed(evt);
@@ -109,7 +121,7 @@ public class gestionvoiture extends javax.swing.JInternalFrame {
                 .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(best, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(303, Short.MAX_VALUE))
+                .addContainerGap(299, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jDesktopPane3)

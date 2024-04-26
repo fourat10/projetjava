@@ -45,28 +45,40 @@ public class gestionclient extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
 
-        add.setText("add");
+        add.setBackground(new java.awt.Color(255, 255, 102));
+        add.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
+        add.setText("ajouter");
+        add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
             }
         });
 
-        del.setText("delete");
+        del.setBackground(new java.awt.Color(255, 255, 102));
+        del.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
+        del.setText("supprimer");
+        del.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         del.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 delActionPerformed(evt);
             }
         });
 
-        jButton3.setText("update");
+        jButton3.setBackground(new java.awt.Color(255, 255, 102));
+        jButton3.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
+        jButton3.setText("modifier");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
+        ban.setBackground(new java.awt.Color(255, 255, 102));
+        ban.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         ban.setText("list banned");
+        ban.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         ban.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 banActionPerformed(evt);
@@ -77,14 +89,17 @@ public class gestionclient extends javax.swing.JInternalFrame {
         jDesktopPane3.setLayout(jDesktopPane3Layout);
         jDesktopPane3Layout.setHorizontalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         jDesktopPane3Layout.setVerticalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        best.setBackground(new java.awt.Color(255, 255, 102));
+        best.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         best.setText("best client");
+        best.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         best.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bestActionPerformed(evt);
@@ -104,8 +119,7 @@ public class gestionclient extends javax.swing.JInternalFrame {
                     .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(best, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktopPane3)
-                .addContainerGap())
+                .addComponent(jDesktopPane3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,11 +134,10 @@ public class gestionclient extends javax.swing.JInternalFrame {
                 .addComponent(ban, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(best, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 237, Short.MAX_VALUE))
+                .addGap(68, 230, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane3)
-                .addContainerGap())
+                .addComponent(jDesktopPane3))
         );
 
         pack();

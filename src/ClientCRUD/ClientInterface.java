@@ -5,7 +5,7 @@
 package ClientCRUD;
 
 import Classes.Client;
-import best_cars.ListePanne;
+import Mecanicien.ListePanne;
 import java.sql.Connection;
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -63,21 +63,30 @@ public class ClientInterface extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        louerbtn.setBackground(new java.awt.Color(255, 255, 102));
+        louerbtn.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         louerbtn.setText("LOUER VOITURE");
+        louerbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         louerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 louerbtnActionPerformed(evt);
             }
         });
 
+        retournerbtn.setBackground(new java.awt.Color(255, 255, 102));
+        retournerbtn.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         retournerbtn.setText("RETOURNER VOITURE");
+        retournerbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         retournerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 retournerbtnActionPerformed(evt);
             }
         });
 
+        prendrebtn.setBackground(new java.awt.Color(255, 255, 102));
+        prendrebtn.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         prendrebtn.setText("PRENDRE VOITURE");
+        prendrebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         prendrebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prendrebtnActionPerformed(evt);
@@ -95,7 +104,10 @@ public class ClientInterface extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        annulerbtn.setBackground(new java.awt.Color(255, 255, 102));
+        annulerbtn.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         annulerbtn.setText("ANNULER RESERVATION");
+        annulerbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         annulerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 annulerbtnActionPerformed(evt);
@@ -110,10 +122,10 @@ public class ClientInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(prendrebtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(retournerbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                    .addComponent(retournerbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(louerbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(clientUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(annulerbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
+                    .addComponent(annulerbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );

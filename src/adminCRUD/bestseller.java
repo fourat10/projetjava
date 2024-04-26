@@ -37,7 +37,7 @@ public class bestseller extends javax.swing.JInternalFrame {
         Connecteur connect=new Connecteur();
        
         con = connect.connecttodb();
-        String query = "SELECT * FROM voiture";
+        String query = "SELECT marque, model, sum(nb_fois_louee) as summ FROM voiture group by marque, model order by sum(nb_fois_louee) desc LIMIT 3";
         DefaultTableModel tablemodel =(DefaultTableModel) table.getModel();
         tablemodel.setRowCount(0);
         try {
@@ -45,13 +45,12 @@ public class bestseller extends javax.swing.JInternalFrame {
             ResultSet res = stmt.executeQuery(query);
             
             while(res.next()){
-                String matricule = res.getString("matricule");
+                String nb = res.getString("summ");
                 String marque = res.getString("marque");
                 String model = res.getString("model");
-                tablemodel.addRow(new Object[]{matricule,marque,model});
-                tablemodel.setRowCount(3);
+                tablemodel.addRow(new Object[]{marque,model,nb});
+                
             }
-            
         } catch (SQLException ex) {
             Logger.getLogger(listban.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -69,12 +68,16 @@ public class bestseller extends javax.swing.JInternalFrame {
         refresh1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
 
+        refresh1.setBackground(new java.awt.Color(255, 255, 102));
+        refresh1.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         refresh1.setText("Refresh");
+        refresh1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         refresh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refresh1ActionPerformed(evt);
@@ -86,7 +89,7 @@ public class bestseller extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "matricule", "marque", "model"
+                "marque", "model", "nb foix louee"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -104,27 +107,34 @@ public class bestseller extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(table);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Documents\\NetBeansProjects\\Best_cars\\images\\bestcar (1).png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(refresh1)
-                        .addGap(22, 22, 22))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
-                        .addContainerGap())))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(refresh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(114, 114, 114)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -142,6 +152,7 @@ public class bestseller extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refresh1;
     private javax.swing.JTable table;

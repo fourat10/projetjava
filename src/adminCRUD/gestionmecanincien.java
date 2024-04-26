@@ -46,7 +46,7 @@ public class gestionmecanincien extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         add.setBackground(new java.awt.Color(255, 255, 102));
-        add.setText("add");
+        add.setText("ajouter");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
@@ -54,7 +54,7 @@ public class gestionmecanincien extends javax.swing.JInternalFrame {
         });
 
         update.setBackground(new java.awt.Color(255, 255, 102));
-        update.setText("update");
+        update.setText("modifier");
         update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateActionPerformed(evt);
@@ -62,7 +62,7 @@ public class gestionmecanincien extends javax.swing.JInternalFrame {
         });
 
         delete.setBackground(new java.awt.Color(255, 255, 102));
-        delete.setText("delete");
+        delete.setText("supprimer");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteActionPerformed(evt);
@@ -104,14 +104,14 @@ public class gestionmecanincien extends javax.swing.JInternalFrame {
                 .addComponent(delete)
                 .addGap(35, 35, 35)
                 .addComponent(afficher, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(338, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout gestionmecpaneLayout = new javax.swing.GroupLayout(gestionmecpane);
         gestionmecpane.setLayout(gestionmecpaneLayout);
         gestionmecpaneLayout.setHorizontalGroup(
             gestionmecpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 453, Short.MAX_VALUE)
+            .addGap(0, 721, Short.MAX_VALUE)
         );
         gestionmecpaneLayout.setVerticalGroup(
             gestionmecpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

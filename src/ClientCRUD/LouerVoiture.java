@@ -53,90 +53,112 @@ public class LouerVoiture extends javax.swing.JInternalFrame {
         Marque = new javax.swing.JComboBox<>();
         Model = new javax.swing.JComboBox<>();
         reserverbtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
 
+        jLabel1.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         jLabel1.setText("Marque = ");
 
+        jLabel2.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         jLabel2.setText("Model = ");
 
+        jLabel3.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         jLabel3.setText("Date Debut =");
 
+        DateDebut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        jLabel4.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         jLabel4.setText("Date Fin =");
 
+        DateFin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         DateFin.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 DateFinPropertyChange(evt);
             }
         });
 
+        Marque.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         Marque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MarqueActionPerformed(evt);
             }
         });
 
+        Model.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        reserverbtn.setBackground(new java.awt.Color(255, 255, 102));
+        reserverbtn.setFont(new java.awt.Font("Cambria", 0, 15)); // NOI18N
         reserverbtn.setText("RESERVER");
+        reserverbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         reserverbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reserverbtnActionPerformed(evt);
             }
         });
 
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Documents\\NetBeansProjects\\Best_cars\\images\\rentcar (1).png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(59, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(Model, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(Marque, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(DateDebut, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(DateFin, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Model, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Marque, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(DateDebut, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(DateFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addComponent(reserverbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(139, 139, 139))
+                        .addGap(42, 42, 42)
+                        .addComponent(reserverbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(52, 52, 52)
+                .addComponent(jLabel5)
+                .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Marque, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Marque, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Model, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(DateDebut, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(DateFin, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52)
+                        .addComponent(reserverbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(reserverbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                    .addComponent(DateDebut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DateFin, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(201, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
@@ -203,7 +225,7 @@ public class LouerVoiture extends javax.swing.JInternalFrame {
             //elle entre la si les date sont incorrectes
         }else{
         if(Marque.getSelectedItem()==null || Model.getSelectedItem()==null || DateDebut.getDate()== null || DateFin.getDate()==null ){
-            JOptionPane.showMessageDialog(null, " please verify your fields !!! ", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, " veillez verifier tous les champs!!! ", "Error", JOptionPane.ERROR_MESSAGE);
 
         }else{
             
@@ -284,7 +306,7 @@ public class LouerVoiture extends javax.swing.JInternalFrame {
             //ALGO DE RECHERCHE D'UNE VOITURE QUI FAVORISE LES VOITURES NOUVEAU (AUCUNE LOCATION AUPARAVANT)
             
             String sql = "SELECT V.matricule FROM voiture V LEFT JOIN location L on V.matricule = L.matricule WHERE V.marque ='"+marque+
-                    "' and V.model = '"+model+"' AND V.disponibilite = 'disponible' AND  L.id IS null ";
+                    "' and V.model = '"+model+"' AND V.disponibilite = 'disponible' AND V.etat='en marche' AND  L.id IS null ";
             try {
                 Statement stmt = con.createStatement();
                 ResultSet res = stmt.executeQuery(sql);
@@ -307,14 +329,13 @@ public class LouerVoiture extends javax.swing.JInternalFrame {
                     //si il n y a pas des voitures nouneaux on CHERECHE LES VOITURES A ETAT ( en marche ) QUI SONT DISPONIBLES ENTRE LES DATES DE RESERVATION PRESISER PAR LE CLIENT 
                     //ON FAVORISE LES VOITURE DISPONIBLE QUE LES VOITURE LOUEE (V.disponibilite DESC)
                    sql = "SELECT V.matricule FROM voiture V LEFT JOIN location L on V.matricule = L.matricule WHERE V.marque ='"+marque+
-                    "' and V.model = '"+model+"' AND V.etat='en marche'  AND CURDATE() < L.date_fin AND L.date_fin < '"
-                           +datedebut +"' AND V.matricule NOT IN (SELECT L2.matricule FROM location L2 WHERE (L2.date_debut <= '"
+                    "' and V.model = '"+model+"' AND V.etat='en marche' AND  L.date_retour IS NULL  AND V.matricule NOT IN (SELECT L2.matricule FROM location L2 WHERE (L2.date_debut <= '"
                            +datedebut+"' AND '"+datedebut+"' <= L2.date_fin )  OR  ( L2.date_debut <= '"
                            +datefin_newstring+"' AND '"+datefin_newstring+"' <= L2.date_fin) OR (L2.date_debut <= '"
                            +datedebut+"' AND '"+datefin_newstring+"'<= L2.date_fin) OR(L2.date_debut >= '"
-                           +datedebut+"' AND '"+datefin_newstring+"' <= L2.date_fin))  ORDER BY V.disponibilite DESC";
+                           +datedebut+"' AND '"+datefin_newstring+"' >= L2.date_fin))  ORDER BY V.disponibilite DESC";
                    res.close();
-                   
+                   //date_retour =  null
                    res= stmt.executeQuery(sql);
                    if(res.next()){
                         String matricule_voiture = res.getString("matricule");
@@ -396,7 +417,7 @@ public class LouerVoiture extends javax.swing.JInternalFrame {
         debCal.set(Calendar.MILLISECOND, 0);
 
         if (datefin.before(datedeb) || currentCal.after(debCal)) {
-            JOptionPane.showMessageDialog(null, "Please verify your dates!!!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "veillez verifier les dates !!!", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
@@ -455,6 +476,7 @@ public class LouerVoiture extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton reserverbtn;
     // End of variables declaration//GEN-END:variables
 }
